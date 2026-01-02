@@ -14,16 +14,16 @@ public class MenuPanel extends JPanel implements KeyListener {
         this.setPreferredSize(new Dimension(600, 600));
         this.setFocusable(true);
         this.setFocusTraversalKeysEnabled(false);
-        this.addKeyListener(this);
 
         // Load background image
         try {
-            backgroundImage = new ImageIcon("background.jpg").getImage();
+            backgroundImage = new ImageIcon("background.jpeg").getImage();
         } catch (Exception e) {
             System.out.println("Could not load background.jpg");
         }
 
         loadTopScore();
+        SwingUtilities.invokeLater(() -> this.addKeyListener(this));
     }
 
     private void loadTopScore() {
